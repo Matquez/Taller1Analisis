@@ -17,7 +17,7 @@ public class Taller1 {
                 desplegarMenu();
                 seleccion_menu = scan_menu.nextInt();
             }catch(InputMismatchException ex){
-            	System.out.println("No es un número entero");
+            	System.out.println("No es un nÃºmero entero");
                 System.out.println("Intentelo de nuevo");
                 scan_menu.next();
                 seleccion_menu = -1;
@@ -27,7 +27,7 @@ public class Taller1 {
                 case 1:
                     //Cuando se quiere trabajar en la busqueda del criminal
                     Scanner scan_arreglo = new Scanner(System.in);
-                    System.out.println("Escriba el tamaño del arreglo a trabajar: ");
+                    System.out.println("Escriba el tamaÃ±o del arreglo a trabajar: ");
                     try{
                         int tamanio_arreglo;
                         tamanio_arreglo = scan_arreglo.nextInt();
@@ -55,7 +55,7 @@ public class Taller1 {
                         
                         
                     }catch(InputMismatchException ex){
-                        System.out.println("No es un número entero");
+                        System.out.println("No es un nÃºmero entero");
                         System.out.println("Intentelo de nuevo");
                         scan_arreglo.next();
                     }                    
@@ -76,12 +76,14 @@ public class Taller1 {
 	public static boolean DivideAndConquer(int low, int high, int[] A, int criminal){
 		//Definimos el indice central
 		int centro = (low+high)/2;
-		//Se encuentra al criminal
-		if(A[centro] == criminal){
-			return true;
-		}
-		//NO está en esta parte del arreglo
+		
+		//CASO BASE
 		if(low == high){
+			//Se encuentra al criminal
+			if(A[centro] == criminal){
+				return true;
+			}
+			//NO se encontro en esta seccion del arreglo
 			return false;
 		}
 		//Buscamos en cada mitad del arreglo
